@@ -32,8 +32,8 @@ DEFAULT =
     Stylus:       {"^\\s*// ": "// "}
 
 
-_.extend DEFAULT.continue, (window.data.config.continue || {})
-CONTS = DEFAULT.continue
+_.extend DEFAULT["continue"], (window.data.config["continue"] || {})
+CONTS = DEFAULT["continue"]
 
 stratus.on "fractus.key.\n", (editor) ->
   syntax           = editor.syntax?.name
@@ -52,3 +52,4 @@ stratus.on "fractus.key.\n", (editor) ->
         if (new RegExp(match)).test prevLine
           cursor.insert insert
           return
+  return
